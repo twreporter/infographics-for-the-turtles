@@ -1,0 +1,199 @@
+@import './media-queries.scss';
+
+$h1-text: 40px;
+$h2-text: 32px;
+$h3-text: 24px;
+$desc-text: 18px;
+$annotation-text: 14px;
+
+$mobile-area: 414px;
+$desktop-area: 540px; 
+$iPhone5-area: 320px;
+$iPhone6-area: 375px;
+
+$iPhone5Times: 320 / 414;
+$iPhone6Times: 375 / 414;
+$dtTimes: 540 / 414;
+
+@function widthPercentage($width, $baseWidth: $mobile-area) {
+  @return percentage($width / $baseWidth);
+}
+
+@function heightPercentage($height, $baseHeight) {
+  @return percentage($height / $baseHeight);
+}
+
+@function calDesktopHeight($mobileHeight) {
+  @return ($mobileHeight * ($desktop-area / $mobile-area));
+}
+@mixin annotation($baseHeight: 600px) {
+  position: absolute;
+  opacity: 0.5;
+  line-height: 1.25;
+  width: widthPercentage(362px);
+  color: #fff;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: heightPercentage(10px, $baseHeight);
+  text-align: justify;
+  span {
+    margin: 0;
+    font-size: $annotation-text;
+
+    @include fontSize($annotation-text);
+  }
+}
+
+@mixin fontSize($fs) {
+  @include mq($min-width: $iPhone5-area + 1 , $max-width: $iPhone6-area) {
+    font-size: $fs * $iPhone6Times;
+  }
+
+  @include mq($min-width: $desktop-area) {
+    font-size: $fs * $dtTimes;
+  }
+
+  @include mq($max-width: $iPhone5-area) {
+    font-size: $fs * $iPhone5Times;
+  }
+}
+
+// desktop style
+@include mq($min-width: $desktop-area) {
+
+  .mobile {
+    display: none;
+  }
+
+  .non-mobile {
+    display: block;
+  }
+}
+
+@include mq($max-width: $desktop-area - 1) {
+  .mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .non-mobile {
+    display: none;
+  }
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: $h2-text;
+  font-weight: 900;
+  line-height: 1;
+  @include fontSize($h2-text);
+}
+
+h3 {
+  font-size: $h3-text;
+  line-height: 1;
+  @include fontSize($h3-text);
+}
+
+p {
+  line-height: 1.56;
+  font-size: $desc-text;
+  @include fontSize($desc-text);
+}
+
+.seo-hidden {
+  display: none;
+}
+
+.area {
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.bg {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $desktop-area;
+  position: relative;
+}
+
+.animation-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.base {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.ab-center {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.title {
+  color: #c59220;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-weight: 900;
+  font-size: $h2-text;
+  @include fontSize($h2-text);
+}
+
+.subtitle {
+  color: #192d3a;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: $h3-text;
+  line-height: 1.5;
+  @include fontSize($h3-text);
+}
+
+.desc {
+  text-align: justify;
+  margin: 0 auto;
+  width: widthPercentage(362px);
+  color: #192d3a;
+  line-height: 1.56;
+  font-size: $desc-text;
+  @include fontSize($desc-text);
+}

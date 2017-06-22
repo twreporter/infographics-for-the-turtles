@@ -1,0 +1,170 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 1371px;
+
+.title {
+  @extend .text;
+  @extend .title;
+  width: widthPercentage(362px);
+  top: heightPercentage(40px, $baseHeight);
+}
+
+.subtitle {
+  @extend .text;
+  @extend .subtitle;
+  width: widthPercentage(224px);
+  top: heightPercentage(176px, $baseHeight);
+
+  span {
+    display: block;
+    font-size: $desc-text;
+    @include fontSize($desc-text);
+  }
+}
+
+.desc {
+  @extend .text;
+  @extend .desc;
+  color: #c59220;
+  width: widthPercentage(364px);
+  top: heightPercentage(96px, $baseHeight);
+}
+
+.animal01 {
+  @extend .img;
+  top: heightPercentage(265px, $baseHeight);
+  left: widthPercentage(22px);
+  width: widthPercentage(375px);
+  margin: 0;
+}
+
+.animal02 {
+  @extend .img;
+  top: heightPercentage(505px, $baseHeight);
+  left: widthPercentage(231px);
+  width: widthPercentage(130px);
+  margin: 0;
+}
+
+.animal03 {
+  @extend .img;
+  top: heightPercentage(643px, $baseHeight);
+  left: widthPercentage(183px);
+  width: widthPercentage(154px);
+  margin: 0;
+}
+
+.animal04 {
+  @extend .img;
+  top: heightPercentage(765px, $baseHeight);
+  left: widthPercentage(226px);
+  width: widthPercentage(148px);
+  margin: 0;
+}
+
+.animal05 {
+  @extend .img;
+  top: heightPercentage(871px, $baseHeight);
+  left: widthPercentage(224px);
+  width: widthPercentage(108px);
+  margin: 0;
+}
+
+.animal06 {
+  @extend .img;
+  top: heightPercentage(996px, $baseHeight);
+  left: widthPercentage(213px);
+  width: widthPercentage(112px);
+  margin: 0;
+}
+
+.animal07 {
+  @extend .img;
+  top: heightPercentage(1112px, $baseHeight);
+  left: widthPercentage(186px);
+  width: widthPercentage(68px);
+  margin: 0;
+}
+
+.animal08 {
+  @extend .img;
+  top: heightPercentage(1236px, $baseHeight);
+  left: widthPercentage(187px);
+  width: widthPercentage(78px);
+  margin: 0;
+}
+
+.text00 {
+  @extend .text;
+  margin: 0;
+  text-align: left;
+  line-height: 1.56;
+  width: widthPercentage(190px);
+  left: widthPercentage(26px);
+  span.name {
+    font-size: 24px;
+    font-weight: 700;
+    @include fontSize(24px);
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #192d3a;
+
+    @include fontSize(20px);
+  }
+  .number {
+    font-size: 30px;
+    color: #c59220;
+    font-weight: bold;
+
+    @include fontSize(30px);
+  }
+}
+
+
+.text01 {
+  @extend .text00;
+  top: heightPercentage(382px, $baseHeight);
+}
+
+.text02 {
+  @extend .text00;
+  top: heightPercentage(500px, $baseHeight);
+}
+
+.text03 {
+  @extend .text00;
+  top: heightPercentage(618px, $baseHeight);
+}
+
+.text04 {
+  @extend .text00;
+  top: heightPercentage(736px, $baseHeight);
+}
+
+.text05 {
+  @extend .text00;
+  top: heightPercentage(854px, $baseHeight);
+}
+
+.text06 {
+  @extend .text00;
+  top: heightPercentage(972px, $baseHeight);
+}
+
+.text07 {
+  @extend .text00;
+  top: heightPercentage(1090px, $baseHeight);
+}
+
+.text08 {
+  @extend .text00;
+  top: heightPercentage(1208px, $baseHeight);
+}
+
+.annotation {
+  @include annotation($baseHeight);
+}

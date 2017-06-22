@@ -1,0 +1,83 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 759px;
+
+.headerTwo {
+  @extend .text;
+  top: heightPercentage(40px, $baseHeight);
+  width: 100%;
+  h2 {
+    color: #c59220;
+  }
+}
+
+.desc {
+  @extend .text;
+  top: heightPercentage(96px, $baseHeight);
+  width: widthPercentage(364px);
+  text-align: justify;
+  p {
+    color: #c59220;
+  }
+}
+
+.birdLine {
+  @extend .img;
+  top: heightPercentage(129px, $baseHeight);
+  left: widthPercentage(75px);
+  width: widthPercentage(800px);
+}
+
+.bird {
+  @extend .img;
+  top: heightPercentage(149px, $baseHeight);
+  left: widthPercentage(92px);
+  width: widthPercentage(760px);
+}
+
+.lighterLine {
+  @extend .img;
+  top: heightPercentage(277px, $baseHeight);
+  left: widthPercentage(50px);
+  width: widthPercentage(65px);
+  margin: 0;
+  transform: rotate(-45deg);
+}
+
+.lighter {
+  @extend .img;
+  top: heightPercentage(315px, $baseHeight);
+  left: widthPercentage(88px);
+  width: widthPercentage(34px);
+  margin: 0;
+  transform: rotate(-45deg);
+}
+
+.animaWords {
+  @extend .text;
+  margin: 0;
+  width: widthPercentage(165px);
+  left: widthPercentage(23px);
+  top: heightPercentage(539px, $baseHeight);
+  line-height: 1.5;
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #cddfec;
+
+    @include fontSize(20px);
+  }
+
+  .number {
+    font-size: 48px;
+    color: #c59220;
+    font-weight: bold;
+    
+    @include fontSize(48px);
+  }
+}
+
+.annotation {
+  @include annotation($baseHeight);
+}

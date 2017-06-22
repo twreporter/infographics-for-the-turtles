@@ -1,0 +1,70 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 591px;
+
+.headerTwo {
+  @extend .text;
+  top: heightPercentage(40px, $baseHeight);
+  width: 100%;
+  h2 {
+    color: #c59220;
+  }
+}
+
+.desc {
+  @extend .text;
+  top: heightPercentage(97px, $baseHeight);
+  width: widthPercentage(362px);
+  p {
+    color: #c59220;
+  }
+}
+
+
+.rank01 {
+  @extend .img;
+  width: widthPercentage(310px);
+  // top: heightPercentage(149px, $baseHeight);
+  left: widthPercentage(26px);
+  margin: 0;
+}
+
+.rank02 {
+  @extend .img;
+  width: widthPercentage(337px);
+  // top: heightPercentage(224px, $baseHeight);
+  left: widthPercentage(26px);
+  margin: 0;
+}
+
+.rank03 {
+  @extend .img;
+  width: widthPercentage(362px);
+  // top: heightPercentage(299px, $baseHeight);
+  left: widthPercentage(26px);
+  margin: 0;
+}
+
+.rank04 {
+  @extend .img;
+  width: widthPercentage(336px);
+  // top: heightPercentage(376px, $baseHeight);
+  left: widthPercentage(26px);
+  margin: 0;
+}
+
+.rank05 {
+  @extend .img;
+  width: widthPercentage(279px);
+ //  top: heightPercentage(451px, $baseHeight);
+  left: widthPercentage(26px);
+  margin: 0;
+}
+
+.garbage {
+  @extend .img;
+  width: widthPercentage(206px);
+  bottom: 0;
+  left: widthPercentage(89px);
+}

@@ -1,0 +1,30 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 643px;
+
+.subtitle {
+  @extend .subtitle;
+  margin-top: heightPercentage(20px, $baseHeight);
+}
+
+.area6 {
+  padding-top: heightPercentage(40px, $baseHeight);
+  background-color: #305b78;
+}
+
+.entangle {
+  width: widthPercentage(327px);
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}
+
+.ingetion {
+  width: widthPercentage(219px);
+  margin: 0 auto;
+  img {
+    width: 100%;
+  }
+}

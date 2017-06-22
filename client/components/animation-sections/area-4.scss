@@ -1,0 +1,54 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 673px;
+
+.headerTwo {
+  @extend .text;
+  top: heightPercentage(40px, $baseHeight);
+  width: widthPercentage(320px);
+  h2 {
+    line-height: 1.5;
+    color: #c59220;
+  }
+}
+
+.desc {
+  @extend .text;
+  top: heightPercentage(144px, $baseHeight);
+  width: widthPercentage(362px);
+  text-align: justify;
+  p {
+    color: #c59220;
+  }
+}
+
+.chart {
+  position: absolute;
+  top: heightPercentage(218px, $baseHeight);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+
+  @include mq($min-width: $desktop-area) {
+    width: 500px;
+    height: 500px;
+  }
+
+  @include mq($max-width: $iPhone5-area) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.pieText {
+  @extend .img;
+  width: 100%;
+  top: 0;
+}
+
+.annotation {
+  @include annotation($baseHeight);
+}

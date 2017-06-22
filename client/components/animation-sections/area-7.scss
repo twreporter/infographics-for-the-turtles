@@ -1,0 +1,61 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 705px;
+
+.area7 {
+  padding-top: heightPercentage(40px, $baseHeight);
+  background-color: #305b78;
+}
+
+.title {
+  @extend .title;
+  width: widthPercentage(364px);
+}
+
+.subtitle {
+  @extend .subtitle;
+  margin-top: heightPercentage(20px, $baseHeight);
+}
+
+.chart {
+  position: relative;
+  width: widthPercentage(396px);
+  margin: 0 auto;
+  top: 10px;
+  img {
+    width: 100%;
+  }
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.desc {
+  @extend .desc;
+  margin-top: heightPercentage(40px, $baseHeight);
+  color: #96bdd7;
+}
+
+.annotation {
+  color: #fff;
+  font-size: $annotation-text;
+  width: widthPercentage(362px);
+  opacity: 0.5;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: heightPercentage(20px, $baseHeight);
+  @include fontSize($annotation-text);
+}

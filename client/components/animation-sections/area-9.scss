@@ -1,0 +1,77 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$heightInWater: 478px;
+
+.onWater {
+  background-color: #305b78;
+  padding-bottom: 28px;
+  > div {
+    h2 {
+      margin: 1em;
+    }
+    max-width: $desktop-area;
+    margin: 0 auto;
+  }
+}
+
+.text01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 25px;
+  margin: 0 auto;
+  width: widthPercentage(364px);
+  line-height: 1.56;
+  color: #96bdd7;
+  text-align: justify;
+  font-size: $desc-text;
+  @include fontSize($desc-text);
+}
+
+.headerTwo {
+  text-align: center;
+  padding-top: 50px;
+  h2 {
+    color: #c59220;
+  }
+
+  p {
+    margin: 0 auto;
+    width: widthPercentage(364px);
+    color: #c59220;
+    text-align: justify;
+  }
+}
+
+.garbage {
+  @extend .img;
+  left: 0;
+  margin-top: heightPercentage(-21px, $heightInWater);
+  img {
+    width: 100%;
+  }
+
+  @include mq($min-width: $desktop-area) {
+    left: -2000px;
+    width: 5000px;
+  }
+}
+
+.coral {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include mq($min-width: $desktop-area) {
+    left: -2000px;
+    width: 5000px;
+  }
+}
+
+.annotation {
+  @include annotation($heightInWater);
+  top: -80%;
+}

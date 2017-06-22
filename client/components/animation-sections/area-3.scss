@@ -1,0 +1,79 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 1384px;
+
+.desc {
+  @extend .text;
+  width: widthPercentage(364px);
+  z-index: 1;
+
+  &.partOne {
+    top: heightPercentage(20px, $baseHeight);
+  }
+  &.partTwo {
+    top: heightPercentage(390px, $baseHeight);
+  }
+  &.partThree {
+    top: heightPercentage(750px, $baseHeight);
+    width: widthPercentage(182px);
+    left: widthPercentage(26px);
+    margin: 0;
+  }
+  
+  p {
+    color: #c59220;
+  }
+}
+
+.garbage {
+  @extend .img;
+  width: widthPercentage(206px);
+  top: 0;
+  left: widthPercentage(89px);
+}
+
+.garbageBg {
+  @extend .img;
+  top: 0;
+  img {
+    width: 100%;
+  }
+  @include mq($min-width: $desktop-area) {
+    left: -2000px;
+    width: 5000px;
+  }
+}
+
+.trench {
+  @extend .img;
+  width: 100%;
+  bottom: 0;
+  @include mq($min-width: $desktop-area) {
+    left: -2200px;
+    width: 5000px;
+  }
+}
+
+.straw {
+  @extend .img;
+  width: widthPercentage(6.2px);
+  left: widthPercentage(272px);
+  top: 0;
+  margin: 0;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,28 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: source-han-sans-traditional,Noto Sans TC,PingFang TC,Apple LiGothic Medium,Roboto,Microsoft JhengHei,Lucida Grande,Lucida Sans Unicode,sans-serif;
+  background-color: #ececec;
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  appearance: none;
+  font-smoothing: antialiased;
+}
+
+ul { 
+  list-style-type: none; 
+}

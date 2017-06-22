@@ -1,0 +1,83 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 993px;
+
+.area {
+  @extend .area;
+  background-color: #333333;
+}
+
+.bg {
+  width: 100%;
+}
+
+.title {
+  @extend .img;
+  width: widthPercentage(383px);
+  top: heightPercentage(192px, $baseHeight);
+  margin: 0 auto;
+  img {
+    width: 100%
+  }
+}
+
+.turtle {
+  color: #ffffff;
+  position: absolute; 
+  left: 0;
+  right: 0;
+  top: heightPercentage(356px, $baseHeight);
+  width: widthPercentage(290px);
+  margin: 0 auto;
+  img  {
+    width: 100%;
+  }
+}
+
+.desc {
+  @extend .text;
+  text-align: justify;
+  top: heightPercentage(703px, $baseHeight);
+  width: widthPercentage(362px);
+  p {
+    line-height: 1.5;
+    color: #ffffff;
+    font-size: 20px;
+    @include mq($min-width: $iPhone5-area + 1 , $max-width: $iPhone6-area) {
+      font-size: 20px * $iPhone6Times;
+    }
+
+    @include mq($min-width: $desktop-area) {
+      font-size:  20px * $dtTimes;
+    }
+
+    @include mq($max-width: $iPhone5-area) {
+      font-size: 20px * $iPhone5Times;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  top: heightPercentage(20px, $baseHeight);
+  left: 0;
+  right: 0;
+  display: block;
+  width: widthPercentage(118px);
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.sea {
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  @include mq($min-width: $desktop-area) {
+    left: -2000px;
+    width: 5000px;
+  }
+}
+
+

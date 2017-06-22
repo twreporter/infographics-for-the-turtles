@@ -1,0 +1,88 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 1024px;
+
+.headerTwo {
+  @extend .text;
+  top: heightPercentage(40px, $baseHeight);
+  width: 100%;
+  h2 {
+    color: #c59220;
+  }
+}
+
+.desc {
+  @extend .text;
+  &.first {
+    top: heightPercentage(90px, $baseHeight);
+    width: widthPercentage(362px);
+  }
+  &.sec {
+    top: heightPercentage(831px, $baseHeight);
+    width: widthPercentage(362px);
+    p {
+      color: #96bdd7;
+    }
+  }
+  p {
+    color: #c59220;
+  }
+}
+
+.partOne {
+  top: heightPercentage(169px, $baseHeight);
+  width: 100%;
+}
+
+.partTwo {
+  top: heightPercentage(519px, $baseHeight);
+  width: 100%;
+}
+
+.headerThree {
+  @extend .text;
+  h3 {
+    color: #4d7590;
+    line-height: 1.5;
+  }
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #4d7590;
+
+    @include fontSize(20px);
+  }
+
+  .number {
+    font-size: 48px;
+    color: #c59220;
+    font-weight: bold;
+    
+    @include fontSize(48px);
+  }
+}
+
+.garbage {
+  @extend .img;
+  width: widthPercentage(374px);
+  top: heightPercentage(244px, $baseHeight);
+  margin: 0 auto;
+}
+
+.truck {
+  @extend .img;
+  width: widthPercentage(365px);
+  top: heightPercentage(636px, $baseHeight);
+  margin: 0 auto;
+}
+
+.rank {
+  @extend .img;
+  width: widthPercentage(114px);
+  margin: 0 auto;
+}
+
+.annotation {
+  @include annotation($baseHeight);   
+}

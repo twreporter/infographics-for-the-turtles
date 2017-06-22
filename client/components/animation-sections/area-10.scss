@@ -1,0 +1,51 @@
+@import './base.scss';
+@import './media-queries.scss';
+
+$baseHeight: 432px;
+
+.area10 {
+  background-color: #2f302f;
+  margin-top: -1px;
+  padding-top: heightPercentage(33px, $baseHeight);
+  padding-bottom: heightPercentage(40px, $baseHeight);
+}
+
+.container {
+  @extend .container;
+}
+
+.title {
+  color: #fff;
+  width: widthPercentage(291px);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.desc {
+  width: widthPercentage(364px);
+  color: #fff;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 30px;
+
+  &.first {
+    margin-top: heightPercentage(15px, $baseHeight);
+  }
+}
+
+.link {
+  width: widthPercentage(363px);
+  margin: 0 auto;
+  a {
+    text-decoration: none; 
+  }
+  span {
+    color: #c59220;
+    @include fontSize(20px);
+  }
+  img {
+    width: widthPercentage(26px);
+    padding-right: 10px;
+  }
+}
