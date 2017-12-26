@@ -9,7 +9,11 @@ import cx from 'classnames';
 import baseStyle from './base.scss';
 import style from './area-4.scss';
 import { Animate } from './base-animate'
-import { PieChart, Pie, Cell, Text, ResponsiveContainer } from 'recharts'
+import PieChart from 'recharts/lib/chart/PieChart'
+import ResponsiveContainer from 'recharts/lib/component/ResponsiveContainer'
+import Cell from 'recharts/lib/component/Cell'
+import Text from 'recharts/lib/component/Text'
+import Pie from 'recharts/lib/polar/Pie'
 
 // image
 import bgImg from '../../../static/img/area-4/a4-background.png';
