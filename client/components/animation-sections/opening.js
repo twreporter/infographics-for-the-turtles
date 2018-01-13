@@ -39,7 +39,7 @@ class Area extends Component {
   onEnter() {
     this.startAnimateTurtle()
     if (!this.state.isAnimationFinished) {
-      setTimeout(() => this.startAnimaStage1(), 1500)
+      setTimeout(() => this.startAnimaStage1(), 1000)
     }
   }
 

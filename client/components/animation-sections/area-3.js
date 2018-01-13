@@ -61,17 +61,12 @@ class Straw extends Component {
 
 class Area extends Component {
 
-  componentDidMount() {
-    this._isMounted = true
-  }
-
   componentWillUnmount() {
-    this._isMounted = undefined
     this.strawNode = undefined
   }
 
   startAnimation(target, isVisible) {
-    if (isVisible && this._isMounted) {
+    if (isVisible) {
       this.strawNode[`setAnimationStage${target}`]()
     }
   }
@@ -88,14 +83,14 @@ class Area extends Component {
           <div className={style.garbage}><img src={garbageImg} role="presentation" /></div>
           <div className={cx(style.desc, style.partOne)}><p>但淨灘的8千多噸，只是冰山一角......</p></div>
           <Sensor
-            onChange={() => this.startAnimation(1)}
+            onChange={(isVisible) => this.startAnimation(1, isVisible)}
             partialVisibility
             minTopValue={300}
           >
             <div className={cx(style.desc, style.partTwo)}><p>學者推估，一年恐有1千2百70萬噸塑膠垃圾流入海中；也有學者估算，海中載浮載沉的海廢，高達5.25兆件。</p></div>
           </Sensor>
           <Sensor
-            onChange={() => this.startAnimation(2)}
+            onChange={(isVisible) => this.startAnimation(2, isVisible)}
             partialVisibility
             minTopValue={300}
           >
