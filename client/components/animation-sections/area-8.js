@@ -1,12 +1,11 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import CountUp from 'react-countup';
+import CountUp from 'react-countup'
 import React, { Component } from 'react'
 import Sensor from 'react-visibility-sensor'
-import baseStyle from './base.scss';
-import style from './area-8.scss';
+import baseStyle from './base.scss'
+import style from './area-8.scss'
 
-import { Animate } from './base-animate'
 
 // image
 import bgImg from '../../../static/img/area-8/a8-background.png'
@@ -35,41 +34,41 @@ const imgs = [
   [animal5Img, animal5aImg],
   [animal6Img, animal6aImg],
   [animal7Img, animal7aImg],
-  [animal8Img, animal8aImg]
+  [animal8Img, animal8aImg],
 ]
 
 const texts = [{
   name: '鬚鯨',
   pct: 76.9,
-  total: 13
-},{
+  total: 13,
+}, {
   name: '北極熊',
   pct: 100,
-  total: 1
-},{
+  total: 1,
+}, {
   name: '海牛',
   pct: 60,
-  total: 5
+  total: 5,
 }, {
   name: '齒鯨',
   pct: 65.7,
-  total: 67
+  total: 67,
 }, {
   name: '海豹',
   pct: 66.7,
-  total: 33
+  total: 33,
 }, {
   name: '海龜',
   pct: 100,
-  total: 7
+  total: 7,
 }, {
   name: '海鳥',
   pct: 50,
-  total: 406
+  total: 406,
 }, {
   name: '水獺',
   pct: 50,
-  total: 2
+  total: 2,
 }]
 
 class Area extends Component {
@@ -77,13 +76,13 @@ class Area extends Component {
     super(props)
     this.state = {
       toAnimate: false,
-      toAnimateAnimals: false
+      toAnimateAnimals: false,
     }
     this.onEnter = (isVisible) => {
       if (isVisible && this._isMounted) {
         this.startAnimateAnimals()
         this.setState({
-          toAnimate: true
+          toAnimate: true,
         })
       }
     }
@@ -99,19 +98,19 @@ class Area extends Component {
   }
 
   startAnimateAnimals() {
-    const _this = this
+    const that = this
     this.interval = setInterval(() => {
-      _this.setState({
-        toAnimateAnimals: !_this.state.toAnimateAnimals,
-      });
-    }, 750);
+      that.setState({
+        toAnimateAnimals: !that.state.toAnimateAnimals,
+      })
+    }, 750)
   }
 
 
   render() {
     const { toAnimate, toAnimateAnimals } = this.state
     const imgComps = []
-    const textComps =[]
+    const textComps = []
     imgs.forEach((imgCol, index) => {
       imgComps.push(
         <div key={`img0${index}`} className={style[`animal0${index + 1}`]}>
@@ -125,17 +124,17 @@ class Area extends Component {
         <div key={`text0${index}`} className={style[`text0${index + 1}`]}>
           <span className={style.name}>{obj.name} </span>
           { toAnimate ?
-              <CountUp
-                className={style.number}
-                start={0}
-                end={obj.pct}
-                decimals={1}
-                useEasing
-                useGrouping
-                duration={1.5}
-              /> : null }
-          <span style={{color: '#c59220'}}>%</span>
-          <span style={{display: 'block'}}>（共{obj.total}個品種）</span>
+            <CountUp
+              className={style.number}
+              start={0}
+              end={obj.pct}
+              decimals={1}
+              useEasing
+              useGrouping
+              duration={1.5}
+            /> : null }
+          <span style={{ color: '#c59220' }}>%</span>
+          <span style={{ display: 'block' }}>（共{obj.total}個品種）</span>
         </div>
       )
     })
@@ -158,8 +157,8 @@ class Area extends Component {
           </div>
         </div>
       </Sensor>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area

@@ -1,25 +1,25 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Sensor from 'react-visibility-sensor'
-import style from './area-7.scss';
+import style from './area-7.scss'
 
 import { AnimateWithMask } from './base-animate'
 
 // image
-import chartImg from '../../../static/img/area-7/a7-chart.png';
-import chartMaskImg from '../../../static/img/area-7/a7-chart-mask.png';
+import chartImg from '../../../static/img/area-7/a7-chart.png'
+import chartMaskImg from '../../../static/img/area-7/a7-chart-mask.png'
 
 class Area extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      toAnimate: false
+      toAnimate: false,
     }
     this.onEnter = (isVisible) => {
       if (this._isMounted && isVisible) {
         this.setState({
-          toAnimate: true
+          toAnimate: true,
         })
       }
     }
@@ -36,8 +36,8 @@ class Area extends Component {
   render() {
     const { toAnimate } = this.state
     return (
-      <div className={style.area7} style={{marginTop:'-1px'}}>
-        <div style={{maxWidth: '540px', margin: '0 auto'}}>
+      <div className={style.area7} style={{ marginTop: '-1px' }}>
+        <div style={{ maxWidth: '540px', margin: '0 auto' }}>
           <h2 className={style.title}>受害海洋生物持續增加</h2>
           <h3 className={style.subtitle}>不同動物品種被海廢影響的比例</h3>
           <Sensor
@@ -49,8 +49,8 @@ class Area extends Component {
             <div>
               <AnimateWithMask
                 animation={{
-                  mask: toAnimate ? { opacity: 1, left: '0%'} : { opacity: 1, left: '-100%' },
-                  img: toAnimate ? { opacity: 1, left: '0%' } : { opacity: 1, left: '100%' }
+                  mask: toAnimate ? { opacity: 1, left: '0%' } : { opacity: 1, left: '-100%' },
+                  img: toAnimate ? { opacity: 1, left: '0%' } : { opacity: 1, left: '100%' },
                 }}
                 delay={500}
                 duration={1000}
@@ -58,7 +58,7 @@ class Area extends Component {
                 imgSrc={chartImg}
                 style={{
                   img: style.chart,
-                  mask: style.mask
+                  mask: style.mask,
                 }}
               />
             </div>
@@ -67,8 +67,8 @@ class Area extends Component {
           <div className={style.annotation}><span>資料來源：學者Kuhn(2015)、生物多樣性公約秘書處</span></div>
         </div>
       </div>
-    );
+    )
   }
 
 }
-export default Area;
+export default Area

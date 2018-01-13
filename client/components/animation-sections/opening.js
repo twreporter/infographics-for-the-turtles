@@ -1,54 +1,39 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import React, { Component } from 'react';
-import cx from 'classnames';
-import baseStyle from './base.scss';
-import style from './opening.scss';
-import { VelocityComponent } from 'velocity-react';
-import Waypoint from 'react-waypoint';
+import React, { Component } from 'react'
+import Waypoint from 'react-waypoint'
+import { VelocityComponent } from 'velocity-react'
 import get from 'lodash/get'
+
+import baseStyle from './base.scss'
+import style from './opening.scss'
 // image
-import bgImg from '../../../static/img/opening/o-background.png';
-import turtelImg from '../../../static/img/opening/o-turtle.png';
-import turtelGarbageImg from '../../../static/img/opening/o-turtle-garbage.png';
-import sea01Img from '../../../static/img/opening/o-sea.png';
-import sea02Img from '../../../static/img/opening/o-sea-5000.png';
+import bgImg from '../../../static/img/opening/o-background.png'
+import turtelImg from '../../../static/img/opening/o-turtle.png'
+import turtelGarbageImg from '../../../static/img/opening/o-turtle-garbage.png'
+import sea01Img from '../../../static/img/opening/o-sea.png'
+import sea02Img from '../../../static/img/opening/o-sea-5000.png'
 import titleImg from '../../../static/img/opening/o-topic.png'
-import logoImg from '../../../static/img/opening/logo.svg';
+import logoImg from '../../../static/img/opening/logo.svg'
 
 const _ = {
-  get
+  get,
 }
 
 class Area extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       animaStage: 0,
       toAnimateTurtle: false,
-      isAnimationFinished: false
-    };
+      isAnimationFinished: false,
+    }
     this.startAnimaStage1 = this.startAnimaStage.bind(this, 1)
     this.startAnimaStage2 = this.startAnimaStage.bind(this, 2, true)
     this.startAnimaStage3 = this.startAnimaStage.bind(this, 3, true)
     this.startAnimateTurtle = this.startAnimateTurtle.bind(this)
     this.onEnter = this.onEnter.bind(this)
     this.onLeave = this.onLeave.bind(this)
-  }
-
-  startAnimateTurtle() {
-    const _this = this
-    this.interval = setInterval(() => {
-      _this.setState({
-        toAnimateTurtle: !_this.state.toAnimateTurtle,
-      });
-    }, 1000);
-  }
-
-  startAnimaStage(stage) {
-    this.setState({
-      animaStage: stage
-    })
   }
 
   onEnter() {
@@ -60,33 +45,48 @@ class Area extends Component {
 
   onLeave() {
     this.setState({
-      isAnimationFinished: true
+      isAnimationFinished: true,
     })
     clearInterval(this.interval)
   }
 
+  startAnimateTurtle() {
+    const that = this
+    this.interval = setInterval(() => {
+      that.setState({
+        toAnimateTurtle: !that.state.toAnimateTurtle,
+      })
+    }, 1000)
+  }
+
+  startAnimaStage(stage) {
+    this.setState({
+      animaStage: stage,
+    })
+  }
+
   render() {
-    const { animaStage, toAnimateTurtle } = this.state;
+    const { animaStage, toAnimateTurtle } = this.state
 
     // sea waves upside and downside
     const animaSequence = [{
       animation: {
         top: 0,
-        opacity: 1
+        opacity: 1,
       },
       duration: 1500,
       delay: 0,
       easing: 'ease',
-      complete: this.startAnimaStage2
+      complete: this.startAnimaStage2,
     }, {
       animation: {
         top: '-200px',
-        opacity: 0.65
+        opacity: 0.65,
       },
       duration: 2000,
       delay: 300,
       easing: 'ease',
-      complete: this.startAnimaStage3
+      complete: this.startAnimaStage3,
     }]
 
     return (
@@ -99,19 +99,19 @@ class Area extends Component {
           <div className={baseStyle.container}>
             <img className={style.bg} src={bgImg} role="presentation" />
             <VelocityComponent
-              animation={_.get(animaSequence, [animaStage-1, 'animation'])}
-              duration={_.get(animaSequence, [animaStage-1, 'duration'])}
-              delay={_.get(animaSequence, [animaStage-1, 'delay'])}
-              complete={_.get(animaSequence, [animaStage-1, 'complete'])}
+              animation={_.get(animaSequence, [animaStage - 1, 'animation'])}
+              duration={_.get(animaSequence, [animaStage - 1, 'duration'])}
+              delay={_.get(animaSequence, [animaStage - 1, 'delay'])}
+              complete={_.get(animaSequence, [animaStage - 1, 'complete'])}
             >
-              <div className={style.sea} style={{ zIndex: 1, top: '-200px'}} >
+              <div className={style.sea} style={{ zIndex: 1, top: '-200px' }} >
                 <img className={baseStyle.mobile} src={sea01Img} role="presentation" />
                 <img className={baseStyle['non-mobile']} src={sea02Img} role="presentation" />
               </div>
             </VelocityComponent>
-            <a href="https://www.twreporter.org" target="_blank"><img src={logoImg} alt="報導者 The Reporter" className={style.logo} /></a>
+            <a href="https://www.twreporter.org" target="_blank" rel="noopener noreferrer"><img src={logoImg} alt="報導者 The Reporter" className={style.logo} /></a>
             <VelocityComponent
-              animation={animaStage > 1 ? {opacity : 1} : { opacity : 0}}
+              animation={animaStage > 1 ? { opacity: 1 } : { opacity: 0 }}
               duration={1000}
               delay={1000}
             >
@@ -132,8 +132,8 @@ class Area extends Component {
           </div>
         </div>
       </Waypoint>
-    );
+    )
   }
 }
 
-export default Area;
+export default Area

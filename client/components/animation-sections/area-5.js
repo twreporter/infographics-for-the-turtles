@@ -1,24 +1,24 @@
 /* eslint  no-underscore-dangle: ["error", { "allowAfterThis": true }]*/
 
-import CountUp from 'react-countup';
-import React, { Component, PropTypes } from 'react';
+import CountUp from 'react-countup'
+import React, { Component } from 'react'
 import Sensor from 'react-visibility-sensor'
-import baseStyle from './base.scss';
-import style from './area-5.scss';
+import baseStyle from './base.scss'
+import style from './area-5.scss'
 
 // image
-import bgImg from '../../../static/img/area-5/a5-background.png';
-import birdLineImg from '../../../static/img/area-5/a5-albatross-line.png';
-import lighterLineImg from '../../../static/img/area-5/a5-lighter-line.png';
-import birdImg from '../../../static/img/area-5/a5-albatross.png';
-import lighterImg from '../../../static/img/area-5/a5-lighter.png';
+import bgImg from '../../../static/img/area-5/a5-background.png'
+import birdLineImg from '../../../static/img/area-5/a5-albatross-line.png'
+import lighterLineImg from '../../../static/img/area-5/a5-lighter-line.png'
+import birdImg from '../../../static/img/area-5/a5-albatross.png'
+import lighterImg from '../../../static/img/area-5/a5-lighter.png'
 
 class Area extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      toAnimate: false
+      toAnimate: false,
     }
     this.onEnter = this._onEnter.bind(this)
   }
@@ -34,7 +34,7 @@ class Area extends Component {
   _onEnter(isVisible) {
     if (isVisible && this._isMounted) {
       this.setState({
-        toAnimate: true
+        toAnimate: true,
       })
     }
   }
@@ -64,25 +64,25 @@ class Area extends Component {
             <div className={style.animaWords}>
               <span>其中</span>
               { this.state.toAnimate ?
-                  <CountUp
-                    className={style.number}
-                    start={0}
-                    end={14.1}
-                    decimals={1}
-                    useEasing
-                    useGrouping
-                    duration={3}
-                    callback={this.toAnimate3}
-                  /> : null }
-                  <span style={{color: '#c59220'}}>%</span>
-                  <span>的打火機來自台灣</span>
-                </div>
-              </Sensor>
-              <div className={style.annotation}><span>資料來源：日本鹿兒島大學教授藤枝繁</span></div>
+                <CountUp
+                  className={style.number}
+                  start={0}
+                  end={14.1}
+                  decimals={1}
+                  useEasing
+                  useGrouping
+                  duration={3}
+                  callback={this.toAnimate3}
+                /> : null }
+              <span style={{ color: '#c59220' }}>%</span>
+              <span>的打火機來自台灣</span>
             </div>
-          </div>
-    );
+          </Sensor>
+          <div className={style.annotation}><span>資料來源：日本鹿兒島大學教授藤枝繁</span></div>
+        </div>
+      </div>
+    )
   }
 
 }
-export default Area;
+export default Area

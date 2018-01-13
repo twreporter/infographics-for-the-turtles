@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { VelocityComponent } from 'velocity-react';
+import React, { PropTypes } from 'react'
+import { VelocityComponent } from 'velocity-react'
 
 function Animate({ animation, className,
   children, delay, duration,
@@ -17,7 +17,7 @@ function Animate({ animation, className,
         { children }
       </div>
     </VelocityComponent>
-  );
+  )
 }
 
 Animate.propTypes = {
@@ -30,7 +30,7 @@ Animate.propTypes = {
   imgAlt: PropTypes.string,
   imgSrc: PropTypes.string,
   onAnimationFinish: PropTypes.func,
-};
+}
 
 Animate.defaultTypes = {
   animation: undefined,
@@ -41,10 +41,10 @@ Animate.defaultTypes = {
   imgAlt: '',
   imgSrc: '',
   onAnimationFinish: undefined,
-};
+}
 
 function AnimateWithMask(props) {
-  const { animation, bgImgSrc, delay, duration, easing, imgSrc, style, onAnimationFinish } = props;
+  const { animation, bgImgSrc, delay, duration, easing, imgSrc, style, onAnimationFinish } = props
   return (
     <div className={style.img}>
       <img src={bgImgSrc} role="presentation" />
@@ -62,7 +62,7 @@ function AnimateWithMask(props) {
         </div>
       </VelocityComponent>
     </div>
-  );
+  )
 }
 
 AnimateWithMask.propTypes = {
@@ -80,7 +80,7 @@ AnimateWithMask.propTypes = {
     img: PropTypes.string,
     mask: PropTypes.string,
   }),
-};
+}
 
 AnimateWithMask.defaultTypes = {
   animation: {
@@ -97,6 +97,6 @@ AnimateWithMask.defaultTypes = {
     img: '',
     mask: '',
   },
-};
+}
 
-export { Animate, AnimateWithMask };
+export { Animate, AnimateWithMask }
