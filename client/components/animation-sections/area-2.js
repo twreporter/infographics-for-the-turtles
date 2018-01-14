@@ -49,8 +49,16 @@ class Area extends Component {
     this.startAnimation = this.startAnimation.bind(this)
   }
 
+  componentDidMount() {
+    this._isMounted = true
+  }
+
+  componentWillUnMount() {
+    this._isMounted = false
+  }
+
   startAnimation(isVisible) {
-    if (isVisible) {
+    if (isVisible && this._isMounted) {
       this.setState({
         toAnimate: true,
       })

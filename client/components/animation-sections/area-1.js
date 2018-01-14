@@ -27,8 +27,16 @@ class AnimationSection extends Component {
     this.onEnter = this.onEnter.bind(this)
   }
 
+  componentDidMount() {
+    this._isMounted = true
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false
+  }
+
   onEnter(isVisible) {
-    if (isVisible) {
+    if (isVisible && this._isMounted) {
       this.setState({
         toAnimate: true,
       })

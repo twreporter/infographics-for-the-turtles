@@ -23,8 +23,16 @@ class Area extends Component {
     this.onEnter = this._onEnter.bind(this)
   }
 
+  componentDidMount() {
+    this._isMounted = true
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false
+  }
+
   _onEnter(isVisible) {
-    if (isVisible) {
+    if (isVisible && this._isMounted) {
       this.setState({
         toAnimate: true,
       })

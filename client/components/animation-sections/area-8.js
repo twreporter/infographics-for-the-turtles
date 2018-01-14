@@ -79,7 +79,7 @@ class Area extends Component {
       toAnimateAnimals: false,
     }
     this.onEnter = (isVisible) => {
-      if (isVisible) {
+      if (isVisible && this._isMounted) {
         this.startAnimateAnimals()
         this.setState({
           toAnimate: true,
@@ -88,7 +88,12 @@ class Area extends Component {
     }
   }
 
+  componentDidMount() {
+    this._isMounted = true
+  }
+
   componentWillUnmount() {
+    this._isMounted = false
     clearInterval(this.interval)
   }
 

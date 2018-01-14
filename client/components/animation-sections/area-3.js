@@ -61,12 +61,17 @@ class Straw extends Component {
 
 class Area extends Component {
 
+  componentDidMount() {
+    this._isMounted = true
+  }
+
   componentWillUnmount() {
+    this._isMounted = false
     this.strawNode = undefined
   }
 
   startAnimation(target, isVisible) {
-    if (isVisible) {
+    if (isVisible && this._isMounted) {
       this.strawNode[`setAnimationStage${target}`]()
     }
   }
